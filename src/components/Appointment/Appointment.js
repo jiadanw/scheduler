@@ -9,8 +9,8 @@ export default function Appointment(props) {
   console.log(last)
   return (
     <>
-    <Header time={props.time} />
-    {!last && (props.interview ? <Show interviewer={props.interview.interviewer} student={props.interview.student}/> : <Empty/>)}
-    </>
+   <Header time={props.time} />
+    {props.interview ? 
+    <Show student={props.interview.student} interviewer={props.interview.interviewer}/>:<Empty/>}    </>
   )
 }

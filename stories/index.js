@@ -160,6 +160,42 @@ const appointments = [
                 avatar: "https://i.imgur.com/LpaY82x.png",
               }
             }
+          },
+          {
+            id: 2,
+            time: "4pm",
+            interview: {
+              student: "Lydia Miller-Jones",
+              interviewer: {
+                id: 1,
+                name: "Sylvia Palmer",
+                avatar: "https://i.imgur.com/LpaY82x.png",
+              }
+            }
+          },
+          {
+            id: 2,
+            time: "6pm",
+            interview: {
+              student: "Lydia Miller-Jones",
+              interviewer: {
+                id: 1,
+                name: "Sylvia Palmer",
+                avatar: "https://i.imgur.com/LpaY82x.png",
+              }
+            }
+          },
+          {
+            id: 2,
+            time: "8pm",
+            interview: {
+              student: "Lydia Miller-Jones",
+              interviewer: {
+                id: 1,
+                name: "Sylvia Palmer",
+                avatar: "https://i.imgur.com/LpaY82x.png",
+              }
+            }
           }
         ];
 
