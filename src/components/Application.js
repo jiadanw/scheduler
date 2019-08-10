@@ -36,12 +36,29 @@ export default function Application(props) {
         appointments
       });
     })
-    
+  }
 
+  const deleteInterview = function(id, interview){
+    return axios({
+      url:`api/appointments/${id}`,
+      method:"delete",
+      data:{}
+    }).then(()=>{
+      const appointment ={
+        ...state.appointments[id],
+        interview:null
+      };
 
-    // state save 
-    // setstate
+      const appointments = {
+        ...state.appointments,
+        [id]:appointment
+      };
 
+      setState({
+        ...state,
+        appointments
+      });
+    });
   }
 
 
@@ -90,7 +107,7 @@ export default function Application(props) {
 />
       </section>
       <section className="schedule">
-      {/* {console.log(state)} */}
+      
       {getAppointmentsForDay(state,state.day).map(appointment => {
        console.log('-------------------------------')
        console.log(appointment)
@@ -105,9 +122,7 @@ export default function Application(props) {
        }
 
         return <Appointment key={appointment.id} id={appointment.id} bookInterview={bookInterview} interview={interview} key ={appointment.id} id={appointment.id} time={appointment.time}  interviewers={interviewers} ></Appointment>
-      })}
-      {/* {console.log(getInterviewersForDay(state,state.day))} */}
-      
+      })}      
       </section>
     </main>
   );

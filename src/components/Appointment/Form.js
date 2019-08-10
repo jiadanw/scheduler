@@ -9,14 +9,6 @@ export default function Form(props){
     <main className="appointment__card appointment__card--create">
   <section className="appointment__card-left">
     <form autoComplete="off" onSubmit={(event) => event.preventDefault()}>
-      {/* <input
-        className="appointment__create-input text--semi-bold"
-        name="name"
-        type="text"
-        placeholder="Enter Student Name"
-      /> */}
-
-
       <input
            className="appointment__create-input text--semi-bold"
            name="name"
