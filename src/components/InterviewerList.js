@@ -6,16 +6,18 @@ import InterviewerListItem from "components/InterviewerListItem"
 
 export default function InterviewerList(props){
   return(
-    props.interviewers.map((interviewer) => {
-      return <InterviewerListItem
-       name={interviewer.name}
-       avatar={interviewer.avatar}
-       setInterviewer={() => props.setInterviewer(interviewer.id)}
-      selected={props.interviewer === interviewer.id}
-      />
-    })
-
+<section className="interviewers">
+     <h4 className="interviewers__header text--light">Interviewer</h4>
+     <ul className="interviewers__list">
+       {props.interviewers.map((person) => {
+         return <InterviewerListItem
+                 key={person.id}
+                 avatar={person.avatar}
+                 name={person.name}
+                 setInterviewer={() => props.setInterviewer(person.id)}
+                 selected={person.id===props.interviewer}/>
+       })}
+     </ul>
+   </section>
   )
 }
-
-

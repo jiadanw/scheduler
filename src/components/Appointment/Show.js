@@ -4,10 +4,10 @@ export default function Show(props){
   return (
   <main class="appointment__card appointment__card--show">
   <section class="appointment__card-left">
-    <h2 class="text--regular">Lydia Miller-Jones</h2>
+    <h2 class="text--regular">{props.student}</h2>
     <section class="interviewer">
       <h4 class="text--light">Interviewer</h4>
-      <h3 class="text--regular">Sylvia Palmer</h3>
+      <h3 class="text--regular">{props.interviewer}</h3>
     </section>
   </section>
   <section class="appointment__card-right">
