@@ -12,12 +12,12 @@ it("renders without crashing", () => {
 
 it("renders 'no spots remaining' when there are 0 spots", () => {
   const { getByText } = render(<DayListItem name="Monday" spots={0} />);
-  expect(getByText("no spots remaining")).toBeInTheDocument();
+  expect(getByText("0 spots remaining")).toBeInTheDocument();
 });
 
-it("renders '1 spot remaining' when there is 1 spot", () => {
+it("renders '1 spots remaining' when there is 1 spot", () => {
   const { getByText } = render(<DayListItem name="Monday" spots={1} />);
-  expect(getByText("1 spot remaining")).toBeInTheDocument();
+  expect(getByText("1 spots remaining")).toBeInTheDocument();
 });
 
 it("renders '2 spots remaining' when there are 2 spots", () => {
