@@ -68,7 +68,7 @@ it("validates that the student name is not blank", () => {
   });
   it("calls Cancel and resets the input field", () => {
     const Cancel = jest.fn();
-    const { getByText, getByPlaceholderText, queryByText } = render(
+    const { debug, getByText, getByPlaceholderText, queryByText } = render(
       <Form
         interviewers={interviewers}
         name="Lydia Miller Smith"
@@ -87,7 +87,7 @@ it("validates that the student name is not blank", () => {
     fireEvent.click(getByText("Cancel"));
   
     expect(queryByText(/student name cannot be blank/i)).toBeNull();
-  
+    debug()
     expect(getByPlaceholderText("Enter Student Name")).toHaveValue("");
   
     expect(Cancel).toHaveBeenCalledTimes(1);

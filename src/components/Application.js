@@ -5,7 +5,13 @@ import "components/Application.scss";
 import DayList from "components/DayList";
 import Appointment from "components/Appointment/index";
 import {getAppointmentsForDay, getInterview,getInterviewersForDay} from "helpers/selectors";
-import {useApplicationData} from "hooks/useApplicationData";
+import useApplicationData, { INIT_DATA } from "hooks/useApplicationData";
+
+//jest.mock('axios')
+
+if(process.env.REACT_APP_API_BASE_URL) {
+  axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL
+}
 
 export default function Application(props) {
  const {state,
@@ -89,17 +95,20 @@ export default function Application(props) {
   //    });
   //   }
 
-  useEffect(() => {
-    Promise.all([
-    axios.get('/api/days'),
-    axios.get('/api/appointments'),
-    axios.get('/api/interviewers')
-    ])
-    .then(function(response){
-      dispatch( prev => {return {...prev, days: response[0].data, appointments:response[1].data,
-      interviewers:response[2].data}})
-    })
-  }, []);
+  // useEffect(() => {
+  //   Promise.all([
+  //   axios.get('/api/days'),
+  //   axios.get('/api/appointments'),
+  //   axios.get('/api/interviewers')
+  //   ])
+  //   .then(function(response){
+  //     dispatch( prev => {return {...prev, days: response[0].data, appointments:response[1].data,
+  //     interviewers:response[2].data}})
+
+  //   })
+  // }, []);
+
+  //dispatch({ type: INIT_DATA, days: response[0].data, appointments: response[1].data})
 
 
   return (
@@ -115,7 +124,7 @@ export default function Application(props) {
     <DayList
       days={state.days}
       day={state.day}
-      setDay={day => dispatch( (prev) => {return {...prev, day:day}})}
+      setDay={day => dispatch({type: "SET_DAY", day})}
     />
   </nav>
 <img

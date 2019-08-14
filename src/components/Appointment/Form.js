@@ -39,6 +39,7 @@ export default function Form(props){
   <section className="appointment__card-right">
     <section className="appointment__actions">
       <Button danger  onClick={ (event) => {
+          setName("")
          props.Cancel()
            
            

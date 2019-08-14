@@ -24,9 +24,6 @@ export default function Appointment(props) {
 
 
   const mode = useVisualMode(props.interview ? SHOW: EMPTY)
-  console.log('mode')
-  console.log(mode)
-
   const onSave = function (name, interviewer) {
     if (name && interviewer) {
       const interview = {
@@ -34,7 +31,7 @@ export default function Appointment(props) {
         interviewer
       }
       mode.transition(SAVING)
-    props.bookInterview(props.id, interview).then(() => {
+      props.bookInterview(props.id, interview).then(() => {
       mode.transition(SHOW)
     })
   }
