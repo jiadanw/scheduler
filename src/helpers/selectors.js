@@ -12,13 +12,6 @@ export function getAppointmentsForDay(state, day) {
   return result
  }
 
-//  result = {
-//   { id: 1, time: "12pm", interview: null }
-//   { id: 1, time: "12pm", interview: null 
-//   { id: 1, time: "12pm", interview: null 
-// }
-// result.map(() => <Appoin)
-
  export function getInterview(state, interview) {
    if(interview){
   const interviewerId = interview.interviewer

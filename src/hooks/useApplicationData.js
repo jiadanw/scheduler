@@ -73,13 +73,11 @@ useEffect(() => {
   ]
   ).then((all) => {
     dispatch({type:"INIT_DATA", days:all[0].data, appointments: all[1].data, interviewers: all[2].data})
-    // setState(prev => ({...prev, days:all[0].data, appointments: all[1].data, interviewers: all[2].data}))
   })
 }
 , [])
 
 
-// Make sure that spots are set correctly
 for (let stateDay of state.days) {
   const day = stateDay
   let spots = 0;
@@ -92,10 +90,6 @@ for (let stateDay of state.days) {
   day.spots = spots
 }
 
-
-
-// function to book a new interview and send it into database via axios
-
 const bookInterview = function (id, interview) {
   return axios({
     url: `api/appointments/${id}`,
@@ -106,17 +100,12 @@ const bookInterview = function (id, interview) {
   }).then(() => {
     
     dispatch({ type: SET_INTERVIEW, id, interview })
-    //dispatch({type: SET_APPLICATIONS, appointments:appointments})
-    // setState({
-    //   ...state,
-    //   appointments
-    // });
+    
 
   })
   }
 
 
-// Function to cancel interview and remove from database
 const deleteInterview = function (id, interview) {
   return axios({
     url: `api/appointments/${id}`,
@@ -135,15 +124,11 @@ const deleteInterview = function (id, interview) {
     };
 
     dispatch({type: SET_APPLICATIONS, appointments:appointments})
-    // setState({
-    //   ...state,
-    //   appointments
-    // });
+   
 
   });
   }
 
-// Function that allows user to edit interviews 
 const editInterview = function (id, interview) {
 
   return axios({
@@ -167,9 +152,6 @@ const editInterview = function (id, interview) {
 
   });
   }
-
-
-  // return our state, dispatch, and interview functions back to our application 
   return {
     state,
     dispatch,

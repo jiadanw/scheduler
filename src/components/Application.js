@@ -7,7 +7,6 @@ import Appointment from "components/Appointment/index";
 import {getAppointmentsForDay, getInterview,getInterviewersForDay} from "helpers/selectors";
 import useApplicationData, { INIT_DATA } from "hooks/useApplicationData";
 
-//jest.mock('axios')
 
 if(process.env.REACT_APP_API_BASE_URL) {
   axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL
@@ -20,95 +19,6 @@ export default function Application(props) {
     deleteInterview,
     editInterview} = useApplicationData();
 
-//   const [state, setState] = useState({
-//     day: "Monday",
-//     days: [],
-//     appointments: {},
-//     interviewers:{}
-// });
-
-//   const bookInterview = function (id, interview) {
-    
-//     return axios.put(`/api/appointments/${id}`, {
-//       interview: interview
-//     }).then(() => {
-//       const appointment = {
-//         ...state.appointments[id],
-//         interview: { ...interview }
-//       };
-//       const appointments = {
-//         ...state.appointments,
-//         [id]: appointment
-//       };
-//       setState({
-//         ...state,
-//         appointments
-//       });
-//     })
-//   }
-
-  // const deleteInterview = function(id, interview){
-  //   return axios({
-  //     url:`api/appointments/${id}`,
-  //     method:"delete",
-  //     data:{}
-  //   }).then(()=>{
-  //     const appointment ={
-  //       ...state.appointments[id],
-  //       interview:null
-  //     };
-
-  //     const appointments = {
-  //       ...state.appointments,
-  //       [id]:appointment
-  //     };
-
-  //     setState({
-  //       ...state,
-  //       appointments
-  //     });
-  //   });
-  // }
-  // const editInterview = function (id, interview) {
-
-  //   return axios({
-  //     url: `api/appointments/${id}`,
-  //     method: "put",
-  //     data: {
-  //       interview:interview
-  //     }
-  //    }).then( () => {
-  //     const appointment = {
-  //       ...state.appointments[id],
-  //       interview: interview
-  //     };
-  
-  //     const appointments = {
-  //       ...state.appointments,
-  //       [id]: appointment
-  //     };
-  
-  //     setState({
-  //       ...state,
-  //       appointments
-  //     });
-  //    });
-  //   }
-
-  // useEffect(() => {
-  //   Promise.all([
-  //   axios.get('/api/days'),
-  //   axios.get('/api/appointments'),
-  //   axios.get('/api/interviewers')
-  //   ])
-  //   .then(function(response){
-  //     dispatch( prev => {return {...prev, days: response[0].data, appointments:response[1].data,
-  //     interviewers:response[2].data}})
-
-  //   })
-  // }, []);
-
-  //dispatch({ type: INIT_DATA, days: response[0].data, appointments: response[1].data})
 
 
   return (

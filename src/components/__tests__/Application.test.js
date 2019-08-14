@@ -18,15 +18,7 @@ it("defaults to Monday and changes the schedule when a new day is selected", () 
     expect(getByText("Leopold Silvers")).toBeInTheDocument();
   });
 });
-// it("changes the schedule when a new day is selected", async () => {
-//   const { getByText } = render(<Application />);
 
-//   await waitForElement(() => getByText("Monday"));
-
-//   fireEvent.click(getByText("Tuesday"));
-
-//   expect(getByText("Leopold Silvers")).toBeInTheDocument();
-// });
 
 
 
