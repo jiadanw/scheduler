@@ -34,7 +34,9 @@ export default function Appointment(props) {
       props.bookInterview(props.id, interview).then(() => {
       mode.transition(SHOW)
     })
+    .catch(error => mode.transition(ERROR_SAVING, true));
   }
+
   }
 
   const Delete = function (){
